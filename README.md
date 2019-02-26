@@ -1,9 +1,4 @@
-<p align="center">
-    <img src="https://i.imgur.com/mStrlX0.gif" height="100px">
-
-    <h1 align="center">Yii 2 Basic Project Template</h1>
-    <br>
-</p>
+![alt text](https://i.imgur.com/mStrlX0.gif)
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
