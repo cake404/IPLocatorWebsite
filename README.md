@@ -1,13 +1,10 @@
-### Demo
+IP Locator Website
+--------------------
+This project was a exercise given to me during my internship at etailinsights. The goal of this project was to a create a website that is able to parse through a given IP access log and determine the location and HTTP response of clients that connected to a web server. Another requirement of this website was that it must be able to take IP addresses given by the user and determine their exact location. This website was written in PHP and used an MVC framework called Yii2.
+
+Demo
+----
 ![alt text](https://i.imgur.com/mStrlX0.gif)
-
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
-
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
 
 DIRECTORY STRUCTURE
 -------------------
@@ -42,25 +39,55 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 ### Install MySQL
 
+Install MySQL on you computer either through a package manager:
+
+```(Ubuntu 18.04 example) $ sudo apt-get install mysql-server```
+
+Or through the MySQL website:
+
+https://dev.mysql.com/downloads/mysql/
+
 
 CONFIGURATION
 -------------
 
 ### Database
 
-Edit the file `config/db.php` with real data, for example:
+Create a database in mysql using this command:
+
+```create database iplocatordb;```
+
+Then enter in this command to fill in the database with the necessary information:
+
+```mysql -u username -p database_name < /path/to/IPLocatorWebsite/iplocatordb.sql```
+
+Lastely, Edit the file `config/db.php` with your MySql username and password, for example:
 
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=iplocatordb',
     'username' => 'root',
     'password' => '1234',
     'charset' => 'utf8',
 ];
 ```
 
-**NOTES:**
-- Yii won't create the database for you, this has to be done manually before you can access it.
-- Check and edit the other files in the `config/` directory to customize your application as required.
-- Refer to the README in the `tests` directory for information specific to basic application tests.
+### Dependencies with Composer
+
+Go to the directory where this project has been cloned:
+
+```cd /path/to/IPLocatorWebsite/```
+
+Then run this command to download any dependencies that this project requires:
+
+```composer install```
+
+
+RUNNING SERVER LOCALLY
+----------------------
+Type this command to start the server locally:
+
+```/path/to/IPLocatorWebsite/yii serve```
+
+Then go to ```localhost:8080``` in you web browser, and the index page should be displayed!
